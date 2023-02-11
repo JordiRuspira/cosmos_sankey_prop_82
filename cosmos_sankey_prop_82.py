@@ -30,7 +30,7 @@ st.success("This app only two charts! Please select a validator ")
 st.text("")
 st.subheader('Streamlit App by [Jordi R.](https://twitter.com/RuspiTorpi/). Powered by Flipsidecrypto')
 st.text("")
-st.markdown('Hi there. For more insights please refer to my Flipsidecrypto dashboard on the subject. This streamlit app displays a Sankey chart redelegations from a selected validator to the rest of validators between the time proposal 82 went live and current date.' )   
+st.markdown('Hi there. For more insights please refer to my Flipsidecrypto dashboard on the subject. This streamlit app displays a Sankey chart redelegations from a selected validator to the rest of validators between 2023-02-05 and current date.' )   
 
 
 st.markdown(
@@ -66,7 +66,7 @@ where tx_succeeded = 'TRUE'
 and msg_type = 'message'
 and attribute_key = 'action'
 and attribute_value = '/cosmos.staking.v1beta1.MsgBeginRedelegate'
-and to_date(block_timestamp) between '2022-10-31' and current_date 
+and to_date(block_timestamp) between '2023-02-05' and current_date 
 ),
 
 table_9 as (select distinct tx_id, attribute_value as address from cosmos.core.fact_msg_attributes
@@ -953,7 +953,7 @@ with tab2:
     and msg_type = 'message'
     and attribute_key = 'action'
     and attribute_value = '/cosmos.staking.v1beta1.MsgBeginRedelegate'
-    and to_date(block_timestamp) between '2022-10-31' and current_date 
+    and to_date(block_timestamp) between '2023-02-05' and current_date 
     ),
     
     table_9 as (select distinct tx_id, attribute_value as address from cosmos.core.fact_msg_attributes
